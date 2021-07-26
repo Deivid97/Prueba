@@ -1,0 +1,13 @@
+controller\TemaController.class
+modelo\Estudiante.class
+gestion\UsuarioGestion.class
+gestion\NotasGestion.class
+modelo\Notas.class
+controller\NotasController.class
+controller\UsuarioController.class
+com\sc403\lec03\JAXRSConfiguration.class
+controller\EstudianteController.class
+gestion\EstudianteGestion.class
+modelo\Conexion.class
+com\sc403\lec03\resources\JavaEE8Resource.class
+modelo\Usuario.class

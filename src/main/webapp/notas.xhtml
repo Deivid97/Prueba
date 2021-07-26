@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <body>
+
+  <ui:composition template="./resources/plantillas/plantilla.xhtml">
+
+            <ui:define name="content">
+                
+                <h:form>
+                    
+                    <b:dataTable value="#{notasController.notas}"
+                                 var="notas"
+                                 excel="true"
+                                 csv="true"
+                                 pdf="true"
+                                 columnVisibility="true"
+                                 copy="true"
+                                 print="true">
+                        <b:dataTableColumn value="#{notas.idEstudiante}"
+                                           width="8%"
+                                           label="Identificación"/>
+                        
+                        <b:dataTableColumn value="#{notas.idMateria}"
+                                           width="15%"
+                                           label="Codigo Materia"/>
+                        
+                        <b:dataTableColumn value="#{notas.idPeriodo}"
+                                           width="19%"
+                                           label="Codigo Periodo"/>
+                        
+                        <b:dataTableColumn value="#{notas.nota}"
+                                           width="19%"
+                                           label="Nota"/>
+                        
+                        <b:dataTableColumn width="10%"
+                                           style="text-align: center"
+                                           label="Accion">
+                            
+                            <b:commandButton value="Editar"                                                
+                                             action="#{notasController.edita(notas.idEstudiante)}"/>
+                            
+                            
+                            
+                        </b:dataTableColumn>
+                    </b:dataTable>
+                </h:form>
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
